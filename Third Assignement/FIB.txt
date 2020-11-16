@@ -1,0 +1,15 @@
+"""
+Created on Thu Nov  5 20:56:38 2020
+
+@author: Marco
+"""
+
+def Fibonacci(number):
+    o=1
+    n=1
+    for i in range(number-1):
+        tVal=n
+        n=o
+        o=o+tVal
+    return n    
+print (Fibonacci(24))   

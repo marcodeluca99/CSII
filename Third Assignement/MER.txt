@@ -1,0 +1,17 @@
+"""
+Created on Thu Nov  5 21:59:10 2020
+
+@author: Marco
+"""
+file = open('rosalind_mer.txt')
+lines = file.readlines()
+n = int(lines[0])
+p = int(lines[2])
+arr1 = list(map(int, lines[1].split()))
+arr2 = list(map(int, lines[3].split()))
+
+def MTSA(arr1,arr2):
+
+    return sorted((arr1+arr2))
+
+print(*MTSA(arr1,arr2))

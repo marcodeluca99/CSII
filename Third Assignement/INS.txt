@@ -1,0 +1,22 @@
+"""
+Created on Thu Nov  5 15:01:54 2020
+
+@author: Marco
+"""
+
+def Ins(arr):
+    count = 0
+    for j in range(len(arr)):
+        for i in range(j, len(arr)):
+            if arr[j] > arr[i]:
+                count += 1
+    return count
+
+
+import numpy
+
+arr = numpy.loadtxt('rosalind_ins.txt',skiprows=1)
+Ins(arr)
+
+
+print (Ins(arr))

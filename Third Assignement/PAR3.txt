@@ -1,0 +1,27 @@
+"""
+Created on Mon Nov  9 13:42:17 2020
+
+@author: Marco
+"""
+
+
+def PAR3(array):
+    pre  = []
+    fol = [] 
+    mid = []
+    for i in array:
+        if i < array[0]:
+            pre.append(i)
+        elif i == array[0]:
+            mid.append(i)
+        else:
+            fol.append(i)
+    return pre + mid + fol
+
+
+with open("rosalind_par3.txt") as f:
+    next(f)
+    array = [int(x) for x in f.read().split()]
+
+res = PAR3(array)
+print(" ".join(map(str, res)))

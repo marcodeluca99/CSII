@@ -1,0 +1,17 @@
+"""
+Created on Fri Nov  6 21:58:16 2020
+
+@author: Marco
+"""
+
+
+        
+file = open('rosalind_ms.txt')
+lines = file.readlines()
+n = list(map(int, lines[0].split()))
+
+for i in range(len(lines)):
+
+    array = list(map(int, lines[i].split()))
+
+    print(*sorted(array))        

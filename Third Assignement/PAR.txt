@@ -1,0 +1,27 @@
+"""
+Created on Sat Nov  7 15:33:53 2020
+
+@author: Marco
+"""
+
+def PAR(array):
+    array2 = []
+    left= []
+    right = []
+    array2.append(array[0])
+    for i in range(1, len(array)):
+        if array[i] <= array[0]:
+            left.append(array[i])
+        else:
+            right.append(array[i])
+    array2 = left + array2 + right
+    return array2
+
+if __name__ == '__main__':
+    with open("rosalind_par.txt", "r") as f:
+        n = int(f.readline().strip())
+        A = [int(i) for i in f.readline().strip().split(" ")]
+    B = PAR(A)
+    for i in B:
+        print(i, end=" ")
+   

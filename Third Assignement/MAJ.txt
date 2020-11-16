@@ -1,0 +1,34 @@
+"""
+Created on Thu Nov  5 20:46:22 2020
+
+@author: Marco
+"""
+
+inputfile = open('rosalind_maj.txt', 'r')
+data = inputfile.readlines()
+k, n = data[0].split()
+k = int(k)
+n = int(n)
+
+outputfile = open('rosalind_out.txt', 'w')
+for i in range(1,k+1):
+    arr = data[i].split()
+    arr.sort()
+    c= {}
+    for j in range(len(arr)):
+        arr[j] = int(arr[j])
+        if arr[j] in c:
+            c[arr[j]] += 1
+        else:
+            c[arr[j]] = 1
+
+    b = int(n/2)
+
+
+    if c[arr[b]] > b:
+        outputfile.write(str(arr[b]) + ' ')
+    else:
+        outputfile.write(str(-1) + ' ')
+
+inputfile.close()
+outputfile.close()

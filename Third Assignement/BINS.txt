@@ -1,0 +1,35 @@
+"""
+Spyder Editor
+
+This is a temporary script file.
+
+"""
+f = open('rosalind_bins.txt')
+dim1=int(f.readline())
+dim2=int(f.readline())
+riga3=f.readline()
+riga4=f.readline()
+array1=riga3.split(" ")
+array2=riga4.split(" ")
+
+arrayInt1 =[]
+for i in array1:
+    arrayInt1.append(int(i))
+
+arrayInt2 =[]
+for i in array2:
+    arrayInt2.append(int(i))    
+
+def Binarysearch(arr,k):
+    lst = []
+    arr.insert(0,0)
+    for i in range(len(k)):
+        if k[i] in arr: 
+            lst.append(arr.index(k[i]))
+        else: lst.append(-1)
+    return lst
+
+
+result= Binarysearch(arrayInt1,arrayInt2)
+for i in result:
+    print(str(i)+" ", end="")
