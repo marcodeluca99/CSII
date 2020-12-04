@@ -1,0 +1,25 @@
+"""
+Created on Mon Nov 23 22:12:38 2020
+
+@author: Marco
+Biopython solution
+"""
+
+from Bio import SeqIO
+from suffix_trees import STree
+
+def LCSMFASTA(file):
+    lst = []
+    for record in SeqIO.parse(file, 'fasta'):
+        seq = ''
+        for nt in record.seq:
+            seq += nt
+        lst.append(seq)
+    return lst
+
+
+file = open('rosalind_lcsm.txt', 'r')
+lst = LCSMFASTA(file)
+st = STree.STree(lst)
+print(st.lcs())
+file.close()

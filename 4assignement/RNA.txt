@@ -1,0 +1,25 @@
+"""
+Created on Sat Nov 14 20:10:34 2020
+
+@author: Marco
+"""
+
+def TDIR(s):
+    for x in s:
+        if x=="T":
+            s=s.replace("T","U")
+    return s    
+
+s="AYqLPrMWCnxwDxHyCapmgYTypH3f54XqkLYfxhZZmYPezXCW4n9UbRuYcDcmXWky8CyvW79pq1qxePi72FucuiGLFDXsRuYcDcmXWky8CyvW79pq1qxePi72FucuiGXdBLX4ZNU8hKPuTvEuBpDmukxx1otFamYf5kmYPezXCW4n9UbRuYcDcmXWky8CyvW79pq1qxePi72FucuiGLFDXsRuYcDcmXWky8CyvW79pq1qxePi72FucuiGXdBLX4ZNU8hKPuTvEuBpDmukxx1otFamYf5kmYPezXCW4n9UbRuYcDcmXWky8CyvW79pq1qxePi72FucuiGLFDXsRuYcDcmXWky8CyvW79pq1qxePi72FucuiGXdBLX4ZNU8hKPuTvEuBpDmukxx1otFamYf5kRuYcDcmXWky8CyvW79pq1qxePi72FucuiGLFDXsRuYcDcmXWky8CyvW79pq1qxePi72FucuiGXdBLX4ZNU8hKPuTvEuBpDmukxx1otFamYf5kW4n9UbRuYcDcmXWky8CyvW79pq1qxePi72FucuiGLFDXsRuYcDcmXWky8CyvW79pq1qxePi72FucuiGXdBLX4ZNU8hKPuTvEuBpDmukxx1otFamYf5kYcDcmXWky8CyvW79pq1qxePi72FucuiGLFDXsRuYcDcmXWky8CyvW79pq1qxePi72FucuiGXdBLX4ZNU8hKPuTvEuBpDmukxx1otFamYf5kezXCW4n9UbRuYcDcmXWky8CyvW79pq1qxePi72FucuiGLFDXsRuYcDcmXWky8CyvW79pq1qxePi72FucuiGXdBLX4ZNU8hKPuTvEuBpDmukxx1otFamYf5kW4n9UbRuYcDcmXWky8CyvW79pq1qxePi72FucuiGLFDXsRuYcDcmXWky8CyvW79pq1qxePi72FucuiGXdBLX4ZNU8hKPuTvEuBpDmukxx1otFamYf5k9C"
+
+result=TDIR(s)
+
+print(result)            
+
+
+"SHORT VERSION"
+print(s.replace("T", "U"))
+'''
+file = open('rosalind_revc.txt', "r")
+string = file.read()
+'''

@@ -1,0 +1,46 @@
+"""
+Created on Sat Nov 14 20:25:44 2020
+
+@author: Marco
+slice method
+"""
+
+def CSD (s):
+   
+    for x in range(len(s)):
+        if s[x] == "A":
+            s = s[:x] + "T" + s[x+1:]
+        elif s[x] == "C":
+            s = s[:x] + "G" + s[x+1:]
+        elif s[x] == "T":
+            s = s[:x] + "A" + s[x+1:]
+        elif s[x] == "G":
+            s = s[:x] + "C" + s[x+1:]
+    return s[::-1]
+
+s="AAAACCCGGT"
+print(CSD(s))
+
+'''
+replace method
+'''
+def CSD (s):
+    for x in (s):
+        if x=="A":
+            s=s.replace("A","t")
+        elif x=="C":
+            s=s.replace("C","g")
+        elif x=="T":
+            s=s.replace("T","a")
+        elif x=="G":
+            s=s.replace("G","c")
+          
+    return s.upper()[::-1]
+s="AAAACCCGGT" 
+print (CSD(s))
+
+
+'''
+file = open('rosalind_revc.txt', "r")
+string = file.read()
+'''

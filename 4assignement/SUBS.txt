@@ -1,0 +1,40 @@
+"""
+Created on Mon Nov 16 19:45:10 2020
+
+@author: Marco
+biopython solution
+"""
+
+from Bio import motifs                                      
+from Bio.Seq import Seq                                     
+data = [line.strip('\n') for line in open('rosalind_subs.txt')]
+instances =[Seq(data[1])]                                   
+m = motifs.create(instances)                                
+sequence = Seq(data[0])                                     
+positions = ''                                              
+for pos, seq in m.instances.search(sequence):               
+    positions += str(pos+1) + ' '                           
+print(positions) 
+
+"""
+@author: Marco
+regex solution
+"""
+import re
+
+string = "AYqLPrMWCnxwDxHyCapmgYTypH3f54XqkLYfxhZZmYPezXCW4n9UbRuYcDcmXWky8CyvW79pq1qxePi72FucuiGLFDXsRuYcDcmXWky8CyvW79pq1qxePi72FucuiGXdBLX4ZNU8hKPuTvEuBpDmukxx1otFamYf5kmYPezXCW4n9UbRuYcDcmXWky8CyvW79pq1qxePi72FucuiGLFDXsRuYcDcmXWky8CyvW79pq1qxePi72FucuiGXdBLX4ZNU8hKPuTvEuBpDmukxx1otFamYf5kmYPezXCW4n9UbRuYcDcmXWky8CyvW79pq1qxePi72FucuiGLFDXsRuYcDcmXWky8CyvW79pq1qxePi72FucuiGXdBLX4ZNU8hKPuTvEuBpDmukxx1otFamYf5kmYPezXCW4n9UbRuYcDcmXWky8CyvW79pq1qxePi72FucuiGLFDXsRuYcDcmXWky8CyvW79pq1qxePi72FucuiGXdBLX4ZNU8hKPuTvEuBpDmukxx1otFamYf5kRuYcDcmXWky8CyvW79pq1qxePi72FucuiGLFDXsRuYcDcmXWky8CyvW79pq1qxePi72FucuiGXdBLX4ZNU8hKPuTvEuBpDmukxx1otFamYf5kezXCW4n9UbRuYcDcmXWky8CyvW79pq1qxePi72FucuiGLFDXsRuYcDcmXWky8CyvW79pq1qxePi72FucuiGXdBLX4ZNU8hKPuTvEuBpDmukxx1otFamYf5kUbRuYcDcmXWky8CyvW79pq1qxePi72FucuiGLFDXsRuYcDcmXWky8CyvW79pq1qxePi72FucuiGXdBkeH"
+
+sub_string = "TGTAACATG"
+
+res = []
+k = re.fullmatch(sub_string, string)
+print(k)
+for i in range(len(string) - len(sub_string)):
+    if string[i:i+len(sub_string)] == sub_string:
+ 
+        res.append(i+1)
+        
+result=res
+
+for i in result:
+   print(str(i)+" ", end="")

@@ -1,0 +1,20 @@
+"""
+Created on Mon Nov 23 19:26:33 2020
+
+@author: Marco
+"""
+
+
+import itertools
+def LEXF(s,n):
+    s = s.replace(" ", "")
+    return list(itertools.product(s,repeat=n))
+
+
+f=open("rosalind_lexf.txt","r")
+lines = f.read().splitlines()
+s = lines[0]
+n = int(lines[1])
+result=LEXF(s,n)
+
+print(*[''.join(i) for i in result],sep='\n')

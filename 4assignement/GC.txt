@@ -1,0 +1,33 @@
+"""
+Created on Sun Nov 15 16:14:10 2020
+
+@author: Marco
+"""
+#Read a file and return a list of lines
+
+def readFile(filePath):
+    with open(filePath,"r")as f:
+        #read data from file(FASTA )
+        return[l.strip()for l in f.readlines()]
+
+
+def C_GC_C(s):
+    return round(((s.count("C") + s.count("G"))/len(s)*100),6)
+
+
+FASTAfile=readFile("rosalind_gc.txt")
+FASTAdict={}
+FASTAlabel=""
+for line in FASTAfile:
+    if">"in line:
+        FASTAlabel = line
+        FASTAdict[FASTAlabel] = ""  
+    else:
+        FASTAdict[FASTAlabel] += line
+
+
+
+results={key: C_GC_C(value)for (key,value)in FASTAdict.items()}
+Max_value=(max(results, key=results.get )) 
+
+print(f'{Max_value}\n{results[Max_value]}')

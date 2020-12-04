@@ -1,0 +1,23 @@
+"""
+Created on Sat Nov 14 19:34:58 2020
+
+@author: Marco ; Counting DNA Nucleotides
+"""
+def CDN (s):
+    fdict={"A" :0 ,"C":0,"G":0,"T":0}
+    for x in s:
+        fdict[x]+=1
+    return fdict
+
+
+
+s="GRAYqLPrMWCnxwDxHyCapmgYTypH3f54XqkLYfxhZZmYPezXCW4n9UbRuYcDcmXWky8CyvW79pq1qxePi72FucuiGLFDXsRuYcDcmXWky8CyvW79pq1qxePi72FucuiGXdBLX4ZNU8hKPuTvEuBpDmukxx1otFamYf5kmYPezXCW4n9UbRuYcDcmXWky8CyvW79pq1qxePi72FucuiGLFDXsRuYcDcmXWky8CyvW79pq1qxePi72FucuiGXdBLX4ZNU8hKPuTvEuBpDmukxx1otFamYf5kmYPezXCW4n9UbRuYcDcmXWky8CyvW79pq1qxePi72FucuiGLFDXsRuYcDcmXWky8CyvW79pq1qxePi72FucuiGXdBLX4ZNU8hKPuTvEuBpDmukxx1otFamYf5kmYPezXCW4n9UbRuYcDcmXWky8CyvW79pq1qxePi72FucuiGLFDXsRuYcDcmXWky8CyvW79pq1qxePi72FucuiGXdBLX4ZNU8hKPuTvEuBpDmukxx1otFamYf5kRuYcDcmXWky8CyvW79pq1qxePi72FucuiGLFDXsRuYcDcmXWky8CyvW79pq1qxePi72FucuiGXdBLX4ZNU8hKPuTvEuBpDmukxx1otFamYf5kpZCMCXCDC7UZmYPezXCW4n9UbRuYcDcmXWky8CyvW79pq1qxePi72FucuiGLFDXsRuYcDcmXWky8CyvW79pq1qxePi72FucuiGXdBLX4ZNU8hKPuTvEuBpDmukxx1otFamYf5kZCMCXCDC7UZmYPezXCW4n9UbRuYcDcmXWky8CyvW79pq1qxePi72FucuiGLFDXsRuYcDcmXWky8CyvW79pq1qxePi72FucuiGXdBkeHM29uWK5SGXdBkeHHzmGx9CGGA"
+
+result = CDN(s)
+
+print(" ".join([str(val) for key,val in result.items()] ) )
+'''
+file = open('rosalind_revc.txt', "r")
+string = file.read()
+'''
+    

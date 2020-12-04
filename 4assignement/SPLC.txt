@@ -1,0 +1,32 @@
+"""
+Created on Sun Nov 22 18:54:28 2020
+
+@author: Marco
+Biopython solution
+"""
+from Bio import SeqIO                          
+from Bio.Seq import Seq                        
+         
+
+lst = []                                 
+handle = open('rosalind_splc.fasta', 'r')         
+for record in SeqIO.parse(handle, 'fasta'):    
+    seq = ''                              
+    for x in record.seq:                      
+        seq += x                        
+
+    #print(seq)
+
+    lst.append(seq)                 
+handle.close()                                 
+
+#print(lst)
+
+DNA = lst[0]                        
+introns =lst[1:]                        
+
+for i in range(len(introns)):                  
+    DNA= DNA.replace(introns[i], '')
+
+DNA = Seq(DNA)                       
+print(DNA.translate(to_stop=True))  
