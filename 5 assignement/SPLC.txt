@@ -1,0 +1,54 @@
+"""
+Created on Sun Nov 22 18:54:28 2020
+
+@author: Marco
+Biopython solution
+"""
+
+from Bio import SeqIO                          
+from Bio.Seq import Seq                        
+         
+
+lst = []                                 
+handle = open('rosalind_splc.fasta', 'r')         
+for record in SeqIO.parse(handle, 'fasta'):    
+    seq = ''                              
+    for x in record.seq:                      
+        seq += x                        
+
+
+    lst.append(seq)                 
+handle.close()                                 
+
+
+
+DNA = lst[0]                        
+introns =lst[1:]                        
+
+for i in range(len(introns)):                  
+    DNA= DNA.replace(introns[i], '')
+
+DNA = Seq(DNA)  
+                  
+print(DNA.translate(to_stop=True))
+
+'''
+second solution 
+'''
+
+from Bio.Seq import Seq   
+from Bio import SeqIO
+lst=[]
+with open("rosalind_splc.txt", "r") as handle:
+    for seq in SeqIO.parse(handle, "fasta"):
+        id=seq.id
+        sequ=str(seq.seq)
+        lst.append(sequ)
+handle.close()                                 
+       
+dna=lst[0]
+exo=lst[1:]
+for i in range(len(exo)):
+        dna=dna.replace(exo[i],'')  
+dna=Seq(dna)    
+print(dna.translate(to_stop=True))

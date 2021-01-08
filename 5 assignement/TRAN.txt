@@ -1,0 +1,27 @@
+"""
+Created on Wed Dec  9 18:47:31 2020
+
+@author: Marco
+"""
+
+from Bio import SeqIO                        
+seq = []                               
+handle = open('rosalind_tran.fasta', 'r')       
+for record in SeqIO.parse(handle, 'fasta'):  
+    seq.append(str(record.seq))        
+handle.close()                               
+
+transition = 0                               
+transversion = 0                             
+purines = ['A', 'G']                              
+pyrimidins = ['C', 'T']    
+                                             
+for x, y in zip(seq[0],seq[1]):                        
+    if x != y:                                         
+        if x in purines and y in purines:          
+            transition += 1                  
+        elif x in pyrimidins and y in pyrimidins:        
+            transition += 1                  
+        else:                                
+            transversion += 1                
+print(transition / transversion)
