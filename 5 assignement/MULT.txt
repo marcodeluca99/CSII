@@ -1,0 +1,1 @@
+i could not figure out a solution so i used a tool on this site  https://www.ebi.ac.uk/Tools/msa/mafft/  in order to obtain an allignement and then a little code that count the value.
